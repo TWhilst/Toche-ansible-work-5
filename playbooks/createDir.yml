@@ -1,0 +1,11 @@
+---
+- name: Playbook used to create a directory
+  hosts: all
+  become: true
+
+  tasks:
+    - name: create a directory
+      ansible.builtin.file:
+        path: /opt/devops
+        state: directory
+        mode: '0755'

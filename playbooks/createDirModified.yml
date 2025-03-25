@@ -1,0 +1,19 @@
+---
+- name: Playbook used to create a directory
+  hosts: all
+  become: true
+
+  tasks:
+    - name: create a directory
+      ansible.builtin.file:
+        path: /opt/devops
+        state: directory
+        mode: '0755'
+    
+    - name: create a text file
+      ansible.builtin.copy:
+        dest: /opt/devops/info.txt
+        content:
+          Hello from Ansible!
+          From Toche
+
