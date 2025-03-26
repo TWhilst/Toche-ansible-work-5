@@ -1,0 +1,11 @@
+# ansible n1 -m file -a "path=/home/ec2-user/new-dir state=directory"
+---
+- name: create a directory called new-dir
+  hosts: n1
+#  become: true
+
+  tasks:
+    - name: create directory
+      file:
+        path: /home/ec2-user/new-dir
+        state: directory
