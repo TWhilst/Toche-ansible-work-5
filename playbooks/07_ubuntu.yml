@@ -1,23 +1,23 @@
 # ansible n1 -m file -a "path=/home/ec2-user/new-dir state=directory"
 ---
 - name: Install HTTP server
-  hosts: n2
+  hosts: n1
   become: yes
 
   tasks:
-    - name: Install HTTPD
+    - name: Install Apache2
       yum:
-        name: httpd
+        name: apache2
         state: present
 
-    - name: Start Httpd
+    - name: Start Apache2
       service:
-        name: httpd
+        name: apache2
         state: started
 
-    - name: Enable Httpd
+    - name: Enable Apache2
       service:
-        name: httpd
+        name: apache2
         enabled: yes
 
 ...
