@@ -10,9 +10,4 @@
         src: playbooks/maintenance.html
         dest: /var/www/html/index.html
 
-    - name: Host code
-      git:
-        repo: https://github.com/CeeyIT-Solutions/food3.git
-        dest: /var/www/html
-
 ...
