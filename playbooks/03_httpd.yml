@@ -1,7 +1,7 @@
 # ansible n1 -m file -a "path=/home/ec2-user/new-dir state=directory"
 ---
 - name: Install HTTP server
-  hosts: n2
+  hosts: g1
   become: yes
 
   tasks:
