@@ -1,0 +1,27 @@
+# ansible n1 -m file -a "path=/home/ec2-user/new-dir state=directory"
+---
+- name: Install Apache2 server
+  hosts: g1
+  become: yes
+
+  tasks:
+    - name: Install Apache for ubuntu and red-hat
+      tags: always
+      package:
+        name: "{{apache_package}}"
+
+    - name: Start and enable httpd (red-hat)
+      tags: apache,red-hat,httpd
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Start and Enable Apache2 (ubuntu)
+      tags: apache,ubuntu,apache2
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+...
