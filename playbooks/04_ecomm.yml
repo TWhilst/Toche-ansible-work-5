@@ -14,5 +14,7 @@
       git:
         repo: https://github.com/TWhilst/ansible-work-5.git
         dest: /var/www/html
+        single_branch: yes
+        version: Toche
 
 ...
