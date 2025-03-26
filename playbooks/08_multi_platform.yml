@@ -10,7 +10,7 @@
       package:
         name: "{{apache_package}}"
 
-    - name: Start and enable httpd (red-hat)
+    - name: Start and enable httpd (red-hat).
       tags: apache,red-hat,httpd
       service:
         name: httpd
