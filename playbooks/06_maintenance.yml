@@ -7,7 +7,7 @@
   tasks:
     - name: Update maintenance
       copy:
-        src: playbooks/maintenance.html
+        src: maintenance.html
         dest: /var/www/html/index.html
 
 ...
