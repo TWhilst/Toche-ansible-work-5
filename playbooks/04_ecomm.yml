@@ -12,9 +12,9 @@
 
     - name: Host code
       git:
-        repo: https://github.com/TWhilst/ansible-work-5.git
+        repo: https://github.com/ravi2krishna/ecomm.git
         dest: /var/www/html
         single_branch: yes
-        version: Toche
+        version: master
 
 ...
