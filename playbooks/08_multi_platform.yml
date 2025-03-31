@@ -6,7 +6,7 @@
 
   pre_tasks:
     - name: upgrade all packages
-      dnf5:
+      dnf:
         update_only: yes
         update_cache: yes
       when: ansible_os_family == "RedHat" or "Amazon" or "Fedora"
@@ -20,7 +20,7 @@
   tasks:
     - name: Install Apache for ubuntu and red-hat
       tags: always
-      dnf5:
+      dnf:
         name: "{{apache_package}}"
         state: present
       when: ansible_distribution == "RedHat" or "Amazon" or "Fedora"
