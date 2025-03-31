@@ -5,10 +5,10 @@
   become: yes
 
   pre_tasks:
-    - name: upgrade all packages
-      dnf4:
-        update_only: yes
-        update_cache: yes
+#    - name: upgrade all packages
+#      dnf4:
+#        update_only: yes
+#        update_cache: yes
 #      when: ansible_os_family == "RedHat" or "Amazon" or "Fedora"
 
     - name: upgrade all packages
