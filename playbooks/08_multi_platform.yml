@@ -5,20 +5,20 @@
   become: yes
 
   pre_tasks:
-#    - name: upgrade all packages
-#      dnf4:
-#        update_only: yes
-#        update_cache: yes
-#      when: ansible_os_family == "RedHat"
+    - name: upgrade all packages
+      dnf:
+        update_only: yes
+        update_cache: yes
+      when: ansible_os_family == "RedHat"
 
     - name: upgrade all packages
       apt:
         update_only: yes
         update_cache: yes
-      when: ansible_os_family == "Ubuntu"
+      when: ansible_os_family == "Debian"
 
   tasks:
-    - name: Install Apache for ubuntu and red-hat
+    - name: Install Apache and Httpd
       tags: always
       package:
         name: "{{apache_package}}"
@@ -38,5 +38,5 @@
         name: apache2
         state: started
         enabled: yes
-      when: ansible_os_family == "Ubuntu"
+      when: ansible_os_family == "Debian"
 ...
