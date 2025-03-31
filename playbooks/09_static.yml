@@ -1,0 +1,12 @@
+# ansible n1 -m file -a "path=/home/ec2-user/new-dir state=directory"
+---
+- name: Static page
+  hosts: g1
+  become: yes
+
+  tasks:
+    - name: Update static page
+      copy:
+        src: static.html
+        dest: /var/www/static.html
+
