@@ -16,7 +16,7 @@
         name: httpd
         state: started
         enabled: yes
-      when: ansible_distribution == "Amazon"
+      when: ansible_distribution == "RedHat"
 
     - name: Start and Enable Apache2 (ubuntu)
       tags: apache,ubuntu,apache2
@@ -25,5 +25,4 @@
         state: started
         enabled: yes
       when: ansible_distribution == "Ubuntu"
-
 ...
