@@ -20,9 +20,17 @@
   tasks:
     - name: Install Apache for ubuntu and red-hat
       tags: always
-      package:
+      dnf:
         name: "{{apache_package}}"
         state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Install Apache for ubuntu and red-hat
+      tags: always
+      apt:
+        name: "{{apache_package}}"
+        state: present
+      when: ansible_os_family == "Ubuntu"
 
     - name: Start and enable httpd (red-hat, amazon and centos).
       tags: apache,red-hat,httpd, fedora, amazon
