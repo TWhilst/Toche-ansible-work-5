@@ -7,7 +7,7 @@
   tasks:
     - name: install dnf
       yum:
-        name: dnf
+        name: unzip
         state: present
 
 - name: Install Apache2 server
