@@ -5,6 +5,11 @@
   become: yes
 
   pre_tasks:
+    - name: install dnf in n4
+      dnf5:
+        name: dnf
+        state: present
+
     - name: upgrade all packages
       dnf:
         update_only: yes
