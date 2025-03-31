@@ -11,14 +11,15 @@
         name: "{{apache_package}}"
 
     - name: Start and enable httpd (red-hat, amazon and centos).
-      tags: apache,red-hat,httpd
+      tags: apache,red-hat,httpd, fedora, amazon
       service:
         name: httpd
         state: started
         enabled: yes
       when:
         - ansible_distribution == "RedHat"
-#        - ansible_distribution == "RedHat"
+        - ansible_distribution == "Amazon"
+        - ansible_distribution == "Fedora"
 
     - name: Start and Enable Apache2 (ubuntu)
       tags: apache,ubuntu,apache2
@@ -26,5 +27,7 @@
         name: apache2
         state: started
         enabled: yes
-      when: ansible_distribution == "Ubuntu"
+      when:
+        - ansible_distribution == "Ubuntu"
+        - ansible_distribution == "Debian"
 ...
