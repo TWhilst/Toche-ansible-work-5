@@ -22,7 +22,7 @@
       tags: always
       package:
         name: "{{apache_package}}"
-        state: installed
+        state: present
 
     - name: Start and enable httpd (red-hat, amazon and centos).
       tags: apache,red-hat,httpd, fedora, amazon
