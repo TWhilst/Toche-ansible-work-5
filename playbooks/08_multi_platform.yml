@@ -4,6 +4,19 @@
   hosts: g1
   become: yes
 
+  pre_tasks:
+    - name: upgrade all packages
+      yum:
+        upgrade: yes
+        update_cache: yes
+      when: ansible_os_family == "RedHat"
+
+    - name: upgrade all packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+      when: ansible_os_family == "Ubuntu"
+
   tasks:
     - name: Install Apache for ubuntu and red-hat
       tags: always
