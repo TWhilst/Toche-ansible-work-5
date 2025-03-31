@@ -5,9 +5,10 @@
   become: true
 
   tasks:
-  dnf5:
-    name: dnf
-    state: present
+    - name: install dnf
+      dnf5:
+        name: dnf
+        state: present
 
 - name: Install Apache2 server
   hosts: g1
