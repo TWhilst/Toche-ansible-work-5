@@ -6,7 +6,7 @@
 
   tasks:
     - name: install dnf
-      dnf5:
+      dnf:
         name: dnf
         state: present
 
