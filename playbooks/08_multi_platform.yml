@@ -1,15 +1,5 @@
 # ansible n1 -m file -a "path=/home/ec2-user/new-dir state=directory"
 ---
-- name: install dnf in n4
-  hosts: n4
-  become: true
-
-  tasks:
-    - name: install dnf
-      yum:
-        name: unzip
-        state: present
-
 - name: Install Apache2 server
   hosts: g1
   become: yes
