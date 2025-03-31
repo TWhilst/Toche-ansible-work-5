@@ -8,5 +8,5 @@
     - name: Update static page
       copy:
         src: ~/ansible-work-5/static.html
-        dest: /var/www/static.html
+        dest: /var/www/html/static.html
 
