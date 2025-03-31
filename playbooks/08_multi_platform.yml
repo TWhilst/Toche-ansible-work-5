@@ -5,11 +5,11 @@
   become: yes
 
   pre_tasks:
-#    - name: upgrade all packages
-#      dnf:
-#        update_only: yes
-#        update_cache: yes
-#      when: ansible_os_family == "RedHat"
+    - name: upgrade all packages
+      dnf5:
+        update_only: yes
+        update_cache: yes
+      when: ansible_os_family == "RedHat"
 
     - name: upgrade all packages
       apt:
@@ -20,17 +20,17 @@
   tasks:
     - name: Install Apache for ubuntu and red-hat
       tags: always
-      dnf:
+      dnf5:
         name: "{{apache_package}}"
         state: present
-      when: ansible_os_family == "RedHat"
+      when: ansible_distribution == "RedHat"
 
     - name: Install Apache for ubuntu and red-hat
       tags: always
       apt:
         name: "{{apache_package}}"
         state: present
-      when: ansible_os_family == "Ubuntu"
+      when: ansible_distribution == "Ubuntu"
 
     - name: Start and enable httpd (red-hat, amazon and centos).
       tags: apache,red-hat,httpd, fedora, amazon
@@ -38,7 +38,7 @@
         name: httpd
         state: started
         enabled: yes
-      when: ansible_os_family == "RedHat"
+      when: ansible_distribution == "RedHat"
 
     - name: Start and Enable Apache2 (ubuntu)
       tags: apache,ubuntu,apache2
