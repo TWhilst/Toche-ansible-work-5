@@ -9,6 +9,7 @@
       dnf5:
         name: dnf
         state: present
+      when: hosts == "n4"
 
     - name: upgrade all packages
       dnf:
