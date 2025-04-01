@@ -3,6 +3,8 @@
 - name: Dynamic page
   hosts: g1
   become: yes
+  vars:
+    myUsername: Toche
 
   tasks:
     - name: Update Dynamic page
