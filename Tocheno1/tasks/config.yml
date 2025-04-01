@@ -1,0 +1,12 @@
+---
+
+  - name: Update static page
+    copy:
+      src: ~/ansible-work-5/static.html
+      dest: /var/www/html/static.html
+
+  - name: Update Dynamic page
+    template:
+      src: ~/ansible-work-5/dynamic.j2
+      dest: /var/www/html/dynamic.html
+
