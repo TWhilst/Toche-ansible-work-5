@@ -4,7 +4,7 @@
   hosts: g1
   become: yes
   vars:
-    myUsername: Toche
+    myUsername: Toch
 
   tasks:
     - name: Update Dynamic page
